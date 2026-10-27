@@ -72,5 +72,89 @@
   <footer style="text-align:center; padding:20px; color:#666;">
   Founded by Swayam Subham Thamb
   </footer>
+  <section id="biology" style="padding:25px 15px; max-width:800px; margin:auto; font-family:Arial,sans-serif;">
+  <h2 style="text-align:center;">🧬 STUDYOS Biology Library</h2>
+  <p style="text-align:center;">Class 12 CBSE • NEET 2027</p><input
+type="text"
+id="biologySearch"
+placeholder="Search Biology chapters..."
+oninput="searchBiology()"
+style="width:100%; padding:12px; box-sizing:border-box; margin:12px 0;"
+
+«»
+
+  <div id="biologyChapters">
+    <article class="bio-chapter" style="padding:15px; margin:10px 0; border:1px solid #ddd; border-radius:10px;">
+      <h3>1. Sexual Reproduction in Flowering Plants</h3>
+      <p>Study pollen grains, the embryo sac, pollination, fertilisation and seed formation.</p>
+      <p><strong>Quick revision:</strong> Learn the structures and functions of the anther, ovule and embryo sac.</p>
+      <details>
+        <summary>Practice question</summary>
+        <p>Which structure contains the female gametophyte in flowering plants?</p>
+        <details>
+          <summary>Show answer</summary>
+          <p>The embryo sac.</p>
+        </details>
+      </details>
+    </article><article class="bio-chapter" style="padding:15px; margin:10px 0; border:1px solid #ddd; border-radius:10px;">
+  <h3>2. Human Reproduction</h3>
+  <p>Study the human reproductive systems, gametogenesis, fertilisation, pregnancy and development.</p>
+  <p><strong>Quick revision:</strong> Revise the functions of reproductive organs and the stages of reproduction.</p>
+</article>
+
+<article class="bio-chapter" style="padding:15px; margin:10px 0; border:1px solid #ddd; border-radius:10px;">
+  <h3>3. Reproductive Health</h3>
+  <p>Study reproductive health, contraception, sexually transmitted infections and infertility management.</p>
+  <p><strong>Quick revision:</strong> Understand the purposes of contraception and reproductive-health programmes.</p>
+</article>
+
+<article class="bio-chapter" style="padding:15px; margin:10px 0; border:1px solid #ddd; border-radius:10px;">
+  <h3>4. Principles of Inheritance and Variation</h3>
+  <p>Study Mendelian inheritance, genetic crosses, blood groups, sex determination and genetic disorders.</p>
+  <p><strong>Quick revision:</strong> Practise inheritance problems and understand genotype versus phenotype.</p>
+</article>
+
+<article class="bio-chapter" style="padding:15px; margin:10px 0; border:1px solid #ddd; border-radius:10px;">
+  <h3>5. Molecular Basis of Inheritance</h3>
+  <p>Study DNA, RNA, replication, transcription, translation and gene regulation.</p>
+  <p><strong>Quick revision:</strong> Understand the flow of genetic information from DNA to protein.</p>
+</article>
+
+<article class="bio-chapter" style="padding:15px; margin:10px 0; border:1px solid #ddd; border-radius:10px;">
+  <h3>6. Evolution</h3>
+  <p>Study evidence for evolution, natural selection, evolutionary patterns and human evolution.</p>
+  <p><strong>Quick revision:</strong> Revise natural selection, Hardy–Weinberg equilibrium and key examples.</p>
+</article>
+
+<article class="bio-chapter" style="padding:15px; margin:10px 0; border:1px solid #ddd; border-radius:10px;">
+  <h3>7. Human Health and Disease</h3>
+  <p>Study immunity, common diseases, pathogens, cancer and substance abuse.</p>
+  <p><strong>Quick revision:</strong> Match diseases with their causative agents and understand immune responses.</p>
+</article>
+
+<article class="bio-chapter" style="padding:15px; margin:10px 0; border:1px solid #ddd; border-radius:10px;">
+  <h3>8. Microbes in Human Welfare</h3>
+  <p>Study useful microbes in food production, industrial processes, sewage treatment and biogas production.</p>
+  <p><strong>Quick revision:</strong> Learn important microbes, their products and their uses.</p>
+</article>
+
+  </div>  <p id="noBiologyResults" style="display:none;">No matching chapters found.</p>
+  <p style="font-size:13px;color:#666;">These are introductory revision summaries, not complete chapter notes. Check the current CBSE syllabus before preparing for exams.</p>
+</section><script>
+function searchBiology() {
+  const query = document.getElementById("biologySearch").value.toLowerCase();
+  const chapters = document.querySelectorAll(".bio-chapter");
+  let visible = 0;
+
+  chapters.forEach(function(chapter) {
+    const match = chapter.textContent.toLowerCase().includes(query);
+    chapter.style.display = match ? "block" : "none";
+    if (match) visible++;
+  });
+
+  document.getElementById("noBiologyResults").style.display =
+    visible ? "none" : "block";
+}
+            </script>
 </body>
     </html>

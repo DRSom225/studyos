@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STUDYOS - Study Smarter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4ff;
+      color: #172033;
+      padding: 20px;
+      margin: 0;
+    }
+    .card {
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 24px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px #0002;
+    }
+    h1 { color: #3157d5; }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    input { border: 1px solid #ccc; }
+    button {
+      background: #3157d5;
+      color: white;
+      border: none;
+    }
+    li { margin: 12px 0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>STUDYOS 📚</h1>
+    <p>Your study journey, organized.</p>
+    <h2>Today's Study Goals</h2>
+    <input id="task" placeholder="Enter a study goal">
+    <button onclick="addTask()">Add Study Goal</button>
+    <ul id="tasks"></ul>
+    <p>Small steps. Consistent progress.</p>
+  </div>
+
+  <script>
+    function addTask() {
+      const input = document.getElementById("task");
+      const text = input.value.trim();
+
+      if (!text) {
+        alert("Please enter a study goal.");
+        return;
+      }
+
+      const item = document.createElement("li");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.style.width = "auto";
+      item.appendChild(checkbox);
+      item.appendChild(document.createTextNode(" " + text));
+      document.getElementById("tasks").appendChild(item);
+      input.value = "";
+    }
+  </script>
+</body>
+    </html>
